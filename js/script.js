@@ -10,3 +10,5 @@ console.log(imagens_por_nome);
 const link = document.querySelectorAll('[href^="#"]');
 
 
+//comiit
+console.log(imagens_site);
