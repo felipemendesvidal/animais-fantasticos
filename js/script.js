@@ -13,3 +13,4 @@ const link = document.querySelectorAll('[href^="#"]');
 //comiit
 console.log(imagens_site);
 console.log(imagens_site);
+console.log(imagens_site);
