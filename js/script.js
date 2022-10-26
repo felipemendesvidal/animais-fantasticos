@@ -1,29 +1,13 @@
-//retornar no console todas as imagens
-const imagens_site = document.querySelectorAll('img');
-console.log(imagens_site);
+//selecionando os elementos da li
+const tab_menu = document.querySelectorAll('.js-tabmenu li');
 
-//retorne as iagens que começe com imagem
-const imagens_por_nome = document.querySelectorAll('img[src^="img/imagem2.jpg"]');
-console.log(imagens_por_nome);
-
-// selecione todos os links internos onde o hrfe comece como #
-const link = document.querySelectorAll('[href^="#"]');
+//selecionando conteudo 
+const tab_conteudo = document.querySelectorAll('.js-tabconteudo section');
 
 
-//comiit
-console.log(imagens_site);
-console.log(imagens_site);
-console.log(imagens_site);
-//comiit
-console.log(imagens_site);
-console.log(imagens_site);
-console.log(imagens_site);
+// adiciona class de acordo com um numero passado
+function ativar_tab (Numero_tab_ativar){
 
-//comiit
-console.log(imagens_site);
-console.log(imagens_site);
-console.log(imagens_site);
-//comiit
-console.log(imagens_site);
-console.log(imagens_site);
-console.log(imagens_site);
+    //pega o conteudo em array e adiciona a class ativo
+    tab_conteudo[Numero_tab_ativar].classList.add('ativo');
+}
