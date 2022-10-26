@@ -3,6 +3,8 @@ const tab_menu = document.querySelectorAll('.js-tabmenu li');
 
 //selecionando conteudo 
 const tab_conteudo = document.querySelectorAll('.js-tabconteudo section');
+// sempre colocando o primeiro item ativo
+tab_conteudo[0].classList.add('ativo');
 
 
 // adiciona class de acordo com um numero passado

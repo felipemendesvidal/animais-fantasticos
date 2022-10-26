@@ -85,6 +85,7 @@ body{
     overflow-y:scroll;
     grid-column: 2;
 }
+.animais-lista li{cursor: pointer;}
 .animais-lista::-webkit-scrollbar{
     width: 18px;
 }
@@ -157,6 +158,18 @@ body{
     letter-spacing: 00.1rem;
     font-weight: bold;
 }
+
+/* tab configurações */
+.js-tabconteudo section{display: none;}
+.js-tabconteudo section.ativo{display: block!important; animation: mostrar .5s forwards;}
+
+/* animação para transição do conteudo */
+@keyframes mostrar {
+    from{opacity: 0; transform: translate3d(-30, 0, 0);}
+    to{opacity: 1; transform: translate3d(0, 0, 0);}
+}
+
+
 @media(max-width:700px){
     body{
         grid-template-columns: 1fr;
@@ -184,3 +197,5 @@ body{
         margin-bottom: 0px;
     }
 }
+
+
