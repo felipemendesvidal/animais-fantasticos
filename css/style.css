@@ -160,8 +160,8 @@ body{
 }
 
 /* tab configurações */
-.js-tabconteudo section{display: none;}
-.js-tabconteudo section.ativo{display: block!important; animation: mostrar .5s forwards;}
+.js .js-tabconteudo section{display: none;}
+.js .js-tabconteudo section.ativo{display: block!important; animation: mostrar .5s forwards;}
 
 /* animação para transição do conteudo */
 @keyframes mostrar {
