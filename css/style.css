@@ -162,6 +162,13 @@ body{
 /* tab configurações */
 .js .js-tabconteudo section{display: none;}
 .js .js-tabconteudo section.ativo{display: block!important; animation: mostrar .5s forwards;}
+.js .js-acordeao dd{display: none;}
+.js .js-acordeao dt::after{content:'⬎' ; margin-left: 10px;}
+.js .js-acordeao dt.ativo::after{content:'⬏' ; }
+.js .js-acordeao dd.ativo {display: block; animation: deslizar_conteudo_para_baixo .5s forwards;}
+
+
+
 
 /* animação para transição do conteudo */
 @keyframes mostrar {
@@ -169,6 +176,11 @@ body{
     to{opacity: 1; transform: translate3d(0, 0, 0);}
 }
 
+/* slide dowm do faq */
+@keyframes deslizar_conteudo_para_baixo {
+    from {opacity: 0; max-height: 0;}
+    to{opacity: 1; max-height: 500px;}
+}
 
 @media(max-width:700px){
     body{
