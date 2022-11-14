@@ -63,17 +63,48 @@ function inciar_acordeon(){
 }
 
 
+function iniciar_scroll_suave (){
+    const links_menu = document.querySelectorAll('.js-menu a[href^="#"]');
 
 
+    function scrollparaSecao(evento){
+        //resetando o padrão dos links
+        evento.preventDefault();
+
+        //pegar href do link que clicou
+        const href_clicado = evento.currentTarget.getAttribute('href');
+
+        // pegando a seção
+        const secao = document.querySelector(href_clicado);
 
 
+        //forma alternativa
+        // pegando o tamanho to do topo 
+        // const altura_ate_topo = secao.offsetTop;
+        // window.scrollTo({
+        //     top: altura_ate_topo,
+        //     behavior: 'smooth'
+        // });
+
+        secao.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });// dessa forma, vcê não precisa ver a distancia entre a section e o topo
 
 
+    }
 
 
+    //adicionando evento a cada link
+    links_menu.forEach((link_percorrido)=>{
+        link_percorrido.addEventListener('click', scrollparaSecao);
+    });
+
+}
 
 
 
 //area de ativação das funcoes
 iniciar_navegacao_tab();
-inciar_acordeon()
+inciar_acordeon();
+iniciar_scroll_suave();
