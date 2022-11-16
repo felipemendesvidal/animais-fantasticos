@@ -103,8 +103,52 @@ function iniciar_scroll_suave (){
 }
 
 
+function iniciar_animação_ao_scrollar (){
+    //selecionando seções do conteudo inteiro
+    const secoes_conteudos = document.querySelectorAll('.js-scroll');
+
+
+    //verificando as secoes existem
+    if (secoes_conteudos.length){ 
+        //pegando altura da tela da pessoa para fzer o calculo
+        const metade_do_tamanho_janela = window.innerHeight * 0.6;
+
+        // animar elemento quando dar scroll
+        function animar_ao_escrolar (){
+            //saber qual a distancia de cada  elemento em relação ao topo
+            secoes_conteudos.forEach((secoes_percorrida)=>{
+                const altura_sessao_do_topo = secoes_percorrida.getBoundingClientRect().top;
+                const visibilidade_da_secao = (altura_sessao_do_topo - metade_do_tamanho_janela) < 0 // essa espressão vai retornar true or false; 
+
+                //verificando se altura esta menor que zero e adiciona a classe css com efeito
+                if(visibilidade_da_secao){
+                    secoes_percorrida.classList.add('ativo');
+
+
+
+                //para retirar a classe quando subir    
+                }// else {secoes_percorrida.classList.remove('ativo');}
+            });
+
+        }
+
+        //ativando quando o site aprarece já
+        animar_ao_escrolar ()
+
+        //evento de escrolar
+        window.addEventListener('scroll', animar_ao_escrolar);
+    }
+}
+
+
+
+
+
+
+
 
 //area de ativação das funcoes
 iniciar_navegacao_tab();
 inciar_acordeon();
 iniciar_scroll_suave();
+iniciar_animação_ao_scrollar ()

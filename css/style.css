@@ -166,8 +166,8 @@ body{
 .js .js-acordeao dt::after{content:'⬎' ; margin-left: 10px;}
 .js .js-acordeao dt.ativo::after{content:'⬏' ; }
 .js .js-acordeao dd.ativo {display: block; animation: deslizar_conteudo_para_baixo .5s forwards;}
-
-
+.js .js-scroll{opacity: 0; transform: translate3d(-30px, 0, 0);transition: .3s;}
+.js .js-scroll.ativo{opacity: 1;  transform: translate3d(0px, 0, 0)}
 
 
 /* animação para transição do conteudo */
